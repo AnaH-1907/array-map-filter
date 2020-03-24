@@ -62,6 +62,33 @@ Expected OUTPUT for this sample:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(categorie => {
+    if(categorie.rating < 60){
+      categorie.label = 'rotten';
+      return categorie
+    } else if (60 <= categorie.rating && categorie.rating <= 75) {
+      categorie.label = 'fresh';
+      return categorie
+    } else if (categorie.rating > 75) {
+      categorie.label = 'certified fresh';
+      return categorie
+    }});
+}
+
+
+function getMoviesFreshness(movies) {
+  const movies2 = movies.map(categorie => {
+    if(categorie.rating < 60){
+      categorie.label = 'rotten';
+      return categorie = {name: categorie.name, rating: categorie.rating, label: categorie.label};
+    } else if (60 <= categorie.rating && categorie.rating <= 75) {
+      categorie.label = 'fresh';
+      return categorie = {name: categorie.name, rating: categorie.rating, label: categorie.label};
+    } else if (categorie.rating > 75) {
+      categorie.label = 'certified fresh';
+      return categorie = {name: categorie.name, rating: categorie.rating, label: categorie.label};
+    }});
+    return movies2;
 }
 
 
